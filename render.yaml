@@ -1,12 +1,14 @@
 services:
   - type: web
-    name: ai-chatbot-backend
+    name: ai-chatbot
     env: node
     plan: free
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && node server.js
+    buildCommand: cd Frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: node backend/server.js
     envVars:
       - key: PORT
         value: 5001
+      - key: HF_TOKEN
+        sync: false
       - key: HF_API_KEY
         sync: false
