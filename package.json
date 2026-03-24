@@ -1,9 +1,9 @@
 {
   "name": "ai_second",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "cd backend && node server.js",
     "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
     "backend": "cd backend && npm start",
     "backend:dev": "cd backend && npm run dev",
